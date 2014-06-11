@@ -136,7 +136,7 @@ $product=[
 foreach ($product as $field => $value){
 	echo"\n$field: $value\n";
 	}
-/**	
+	
 // ejemplo de salidas de ejecucion 
 
 function test()
@@ -151,15 +151,15 @@ function test()
 			return "\n$parameter1 $parameter2 \n";
 }
 //return 'Luis';
-//echo test();
-exit(0);
+echo test();
+//exit(0);
 
-recurrir al return de confi
+//recurrir al return de confi
 
 $confi = require 'confi.php';
 print_r ($confi);
 
-*/
+
 
 /**
 Para el proeso de pago de un empleado se debe de  ingresar la cantidad ganada. 
@@ -179,4 +179,54 @@ echo "Sueldo:  $sueldo\n";
 echo "IVA: $iva\n";
 echo "ISR: $isr\n";
 echo "TOTAL: $total\n";
+
+// ejercicios de la clase del miercoles 11 de junio 
+
+$iva= 250 * 0.15;
+$isr= 250 * 0.10;
+$total = 250 - $iva - $isr ;
+echo "TOTAL: $total\n";
+
+$iva1= 300 * 0.15;
+$isr1= 300 * 0.10;
+$total1 = 300 - $iva - $isr ;
+
+
+$iva2= 600 * 0.15;
+$isr2= 600 * 0.10;
+$total2 = 600 - $iva - $isr ;
+
+
+$iva3= 500 * 0.15;
+$isr3= 500 * 0.10;
+$total3 = 500 - $iva - $isr ;
+
+
+$iva4= 900 * 0.15;
+$isr4= 900 * 0.10;
+$total4 = 900 - $iva - $isr ;
+
+
+$empleados=[['Nombre' => 'Alejandro', 'Sueldo' =>250, 'Pago Total'=> $total],
+['Nombre' =>'Selene', 'Sueldo' =>300, 'Pago Total'=> $total1],
+['Nombre' =>'Alma', 'Sueldo' =>600, 'Pago Total'=> $total2], 
+['Nombre' =>'Maru', 'Sueldo' =>500, 'Pago Total'=> $total3], 
+['Nombre' =>'Mariana','Sueldo' =>900, 'Pago Total'=> $total4]];
+
+print_r($empleados);
+
+// ejercicio con 5 empleados utilizando  un ciclo 
+
+$empleados=[['Nombre' => 'Alejandro', 'Sueldo' =>250, 'Pago Total'=> $total],
+['Nombre' =>'Selene', 'Sueldo' =>300, 'Pago Total'=> $total1],
+['Nombre' =>'Alma', 'Sueldo' =>600, 'Pago Total'=> $total2], 
+['Nombre' =>'Maru', 'Sueldo' =>500, 'Pago Total'=> $total3], 
+['Nombre' =>'Mariana','Sueldo' =>900, 'Pago Total'=> $total4]];
+
+
+print_r($empleados);
+
+
+
+
 ?>
