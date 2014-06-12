@@ -14,6 +14,7 @@ class HtmlElement
 	$this->tag = $tag;
 	$this->content = $content;
 	$this->attributes = $attributes;
+	}
 	/**
 	public  function __call($name, $arguments)
 	{
@@ -61,8 +62,24 @@ class HtmlElement
 		$this->content =$value;
 		}
 	}
+	
+	public function getTag()
+	{
+	return $this->tag;
+	}
+	
+	public function getContent()
+	{
+	return $this->content;
+	}
+	
+	public function getAttributes()
+	{
+	return $this->attributes;
+	}
 }
-}
+
+/*
 $link = new HtmlElement('a', ['href=http://www.google.com.mx'], 'Google');
 echo "\n";
 $renderer = new HtmlRenderer();
@@ -75,7 +92,7 @@ echo "\n";
 $link->content ='yahoo';
 echo "\n";
 echo $link;
-
+*/
 //<a href="http://www.google.com.mx"> Google </a>
 //<span> nombre </span>
 //<br>
