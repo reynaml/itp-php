@@ -14,10 +14,10 @@ class HtmlElement
 	$this->tag = $tag;
 	$this->content = $content;
 	$this->attributes = $attributes;
-	}
+	/**
 	public  function __call($name, $arguments)
 	{
-	/*if('render' === $name){
+	if('render' === $name){
 		$html=sprintf(
 		'<%s  %s> %s </%s>',
 		$this ->tag,
@@ -26,7 +26,7 @@ class HtmlElement
 		$this ->tag
 		);
 		return $html;
-	}*/
+	}
 	//var_dump($name);
 	//var_dump($arguments);
 	}
@@ -43,10 +43,10 @@ class HtmlElement
 		return $html;
 	}
 	
-	public function __toString()
+	/*public function __toString()
 	{
 	return $this-> render();
-	}
+	}*/
 	
 	public function __get($property)
 	{
@@ -62,8 +62,13 @@ class HtmlElement
 		}
 	}
 }
+}
 $link = new HtmlElement('a', ['href=http://www.google.com.mx'], 'Google');
-echo $link ->render(['class' => 'important-link']);
+echo "\n";
+$renderer = new HtmlRenderer();
+echo $renderer->render($link);
+echo "\n";
+//echo $link ->render(['class' => 'important-link']);
 echo "\n";
 echo $link->tag;
 echo "\n";
