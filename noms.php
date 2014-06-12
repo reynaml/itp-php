@@ -1,27 +1,29 @@
 <?php
-$empleados = require 'emp.php';
+$departamentos = require 'emp.php';
+$departamentos['Ventas'] = [];
+$departamentos['Ventas'][] = [
+	'nombre' => 'Roberto Hernandez',
+	'sueldo' => 3500,
+	];
 
-echo "Nombre                 | Sueldo                 |  Departamento \n";
 
-foreach ($empleados as $empleado){
-	$sueldo = $empleado['sueldo'] 
-	- $empleado['sueldo'] * .15 
-	- $empleado['sueldo'] *.10;
+echo "Nombre    |  Depar | Sue base | IVA | ISR | Sue total | Impuesto total\n";
+
+foreach ($departamentos as $departamento => $empleados){
+	echo "\n $departamento ";
+	$impuesto= 0;
+		foreach ($empleados as $empleado){
+	$iva=$empleado['sueldo'] * .15 ;
+	$isr=$empleado['sueldo']* .10 ;
+	$sueldo = $empleado['sueldo'] - $iva - $isr;
+	$impuesto +=$sueldo;
 	
-	echo "{$empleado['nombre']}             | $sueldo            |'depar'\n";
-
+	echo "{$empleado['nombre']}   |{$empleado['sueldo']} |\n";
+	echo "$iva    | $isr    | $sueldo |\n";
 }
 
-$depa = function($dep){
-		if($dep == 'tintes'){
-		return $dep;
-		} else {
-		return 'armado';
-		}
-};
-echo "{$empleado['nombre']}             | $sueldo            |'depar'\n";
-echo "\n";
-
+echo "\nImpuesto Total:  $impuesto \n";
+}
 
 
 ?>
