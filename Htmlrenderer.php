@@ -1,7 +1,7 @@
 <?php
 class Htmlrenderer
 {
-	public function render(HmlElement $element)
+	public function render(HtmlElement $element)
 	{
 	$html=sprintf(
 		'<%s  %s> %s </%s>',
@@ -15,11 +15,11 @@ class Htmlrenderer
 	
 	protected function renderAttributes(array $attributes)
 	{
-	$attributes='';
+	$htmlAttributes='';
 	foreach ($attributes as $key =>$value){
-		$attributes="\" $key=$value\"";
+		$htmlAttributes="\" $key=$value\"";
 		}
-		return $attributes;
+		return $htmlAttributes;
 	}
 
 }
