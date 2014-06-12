@@ -1,12 +1,12 @@
 <?php
-class HtmlRenderer
+class Htmlrenderer
 {
 	public function render(HmlElement $element)
 	{
 	$html=sprintf(
 		'<%s  %s> %s </%s>',
 		$element ->getTag(),
-		$this->renderAttributes($element->getAttributes())),
+		$this->renderAttributes($element->getAttributes()),
 		$element ->getContent(),
 		$element ->getTag()
 		);
